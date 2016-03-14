@@ -12,7 +12,7 @@ class UserController extends Controller
 
 	public function __construct()
 	{
-		$this->middleware('auth');
+		// $this->middleware('auth');
 	}
 
     // 查询指定id的用户
@@ -37,9 +37,6 @@ class UserController extends Controller
     }
 
     public function login() {
-    	echo "ddd";
-    	// $this->validate($request, [
-	    //     'name' => 'required|max:255',
-	    // ]);
+    	return view("pages.login");
     }
 }
