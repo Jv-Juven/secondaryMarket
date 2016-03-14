@@ -96,13 +96,13 @@ module.exports = (grunt)->
 					"dist/css/dev.css": "src/stylus/index.styl"
 				}
 			},
-			yiyuan: {
+			usedmk: {
 				options: {
 					compress: false
 					},
 				files: {
-					"dist/css/layout.css": ["src/common/layout.styl"],
-					# "dist/css/login.css": ["src/login/login.styl"]
+					"dist/css/common.css": ["src/common/layout.styl"]
+					"dist/css/login.css": ["src/pages/login.styl"]
 				}
 			}
 		}
@@ -145,9 +145,9 @@ module.exports = (grunt)->
 		watch:
 			compile:
 				options:
-					livereload: true
+					livereload: 1337    #true
 				files: ['src/**/*.styl', 'src/**/*.coffee']
-				tasks: ['stylus', 'coffee']
+				tasks: ['stylus', 'browserify']
 
 
 
@@ -192,7 +192,7 @@ module.exports = (grunt)->
 		grunt.task.run [
 			"clean",
 			# "coffee:yiyuan",
-			"stylus:yiyuan",
+			"stylus:usedmk",
 			"browserify:dist",
 			"watch"
 		]

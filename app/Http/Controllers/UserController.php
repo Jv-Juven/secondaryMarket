@@ -39,4 +39,8 @@ class UserController extends Controller
     public function login() {
     	return view("pages.login");
     }
+
+    public function postlogin(Request $rq) {
+        echo var_dump($rq->input());
+    }
 }

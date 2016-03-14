@@ -1,0 +1,12 @@
+body {
+  font-family: "Microsoft Yahei";
+}
+.login-title {
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.login-label {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}

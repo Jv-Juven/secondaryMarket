@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('/login', 'UserController@login');
 
+Route::post('/postlogin', 'UserController@postlogin');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
