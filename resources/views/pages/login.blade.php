@@ -12,12 +12,12 @@
 @section("body")
 <div class="container">
 	<h3 class="text-center text-primary login-title">用户登录</h3>
-	<form class="form-horizontal" action="/postlogin" method="post">
+	<div id="login" class="form-horizontal">
 		<!-- 用户名 -->
 		<div class="form-group">
 			<label for="name" class="col-xs-3 text-right control-label login-label">用户名</label>
 			<div class="col-xs-8">
-				<input id="name" name="name" class="form-control" type="text" placeholder="请输入您的用户名">
+				<input id="name" name="name" class="form-control" type="text" placeholder="请输入您的用户名" value="" v-model="name">
 			</div>
 		</div>
 
@@ -25,14 +25,15 @@
 		<div class="form-group">
 			<label for="psd" class="col-xs-3 text-right control-label login-label">密码</label>
 			<div class="col-xs-8">
-				<input id="psd" name="password" class="form-control" type="password" placeholder="请输入您的密码">
+				<input id="psd" name="password" class="form-control" type="password" placeholder="请输入您的密码" value="" v-model="password">
 			</div>
 		</div>
 
 		<!-- 提交按钮 -->
 		<div class="form-group">
 			<div class="col-xs-10 col-xs-offset-1">
-				<input class="form-control btn-primary input-lg" type="submit">
+				<!-- <input class="form-control btn-primary input-lg" type="submit"> -->
+				<button class="form-control btn-primary input-lg" @click="submit">提交</button>
 			</div>
 		</div>
 
@@ -46,6 +47,11 @@
 			</div>
 		</div>
 
-	</form>
+	</div>
 </div>
+@stop
+
+@section("js")
+@parent
+<script src="dist/js/login.js"></script>
 @stop

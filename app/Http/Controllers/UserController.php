@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests;
@@ -36,11 +37,42 @@ class UserController extends Controller
     	echo $user->id;
     }
 
+    /**
+     * 获取登录页面
+     */
     public function login() {
     	return view("pages.login");
     }
 
-    public function postlogin(Request $rq) {
+    /**
+     * 处理登录页面提交的数据
+     */
+    public function postLogin(Request $rq) {
         echo var_dump($rq->input());
+    }
+
+    /**
+     * 处理注册页面提交的数据
+     * 用户名、密码、确认的密码、手机号码（可选）、邮箱（可选）
+     */
+    public function postRegister(Request $rq) {
+        // echo var_dump($rq->input());
+        $user = new User;
+        $user->name = $rq->input('name');
+        $user->email = str_random(3).$rq->input('email');
+        // $user->email = str_random(3).$rq->input('email');
+        $user->password = Hash::make($rq->input('password'));
+        $user->save();
+    }
+
+    /**
+     * 修改密码
+     */
+    public function postChangePsd (Request $rq){
+        $user = User::findOrFail($rq->input('id'));
+        $user->fill([
+            'password' => Hash::make($user->password)
+            ])->save();
+
     }
 }

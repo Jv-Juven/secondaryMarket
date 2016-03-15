@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Route::get('/login', 'UserController@login');
 
-Route::post('/postlogin', 'UserController@postlogin');
+Route::post('/postLogin', 'UserController@postLogin');
+
+Route::post('/postRegister', 'UserController@postRegister');
+
+Route::post('/postChangePsd', 'UserController@postChangePsd');
 
 /*
 |--------------------------------------------------------------------------

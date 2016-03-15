@@ -71,6 +71,7 @@ module.exports = (grunt)->
             dist: {
                 files: {
                   "dist/js/layout.js": ["src/common/layout.coffee"]
+                  "dist/js/login.js": ["src/pages/login.coffee"]
                 },
                 options: {
                   transform: ['coffeeify']
