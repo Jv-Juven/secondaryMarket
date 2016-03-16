@@ -15,9 +15,9 @@
 	<div id="login" class="form-horizontal">
 		<!-- 用户名 -->
 		<div class="form-group">
-			<label for="name" class="col-xs-3 text-right control-label login-label">用户名</label>
+			<label for="name" class="col-xs-3 text-right control-label login-label">邮箱</label>
 			<div class="col-xs-8">
-				<input id="name" name="name" class="form-control" type="text" placeholder="请输入您的用户名" value="" v-model="name">
+				<input id="name" name="name" class="form-control" type="text" placeholder="请输入您的邮箱" value="" v-model="email" placeholder="example@email.com">
 			</div>
 		</div>
 

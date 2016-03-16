@@ -5,7 +5,7 @@ form = new Vue {
 	methods: 
 		submit: ()->
 			$.post "/postLogin", {
-				name: this.name
+				email: this.email
 				password: this.password
 			}, (data)->
 				console.log data
