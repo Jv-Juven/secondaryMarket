@@ -55,49 +55,57 @@ class UserController extends Controller
 
         $user = new User;
 
-        $rules = array(
-            'email' => 'required|email',
-            'password' => 'required|min:6|max:255'
-            );
-
-        $message = array(
-            'email.required' => '请输入邮箱地址',
-            'email.email' => '请输入正确的邮箱地址格式'
-            );
-
-        $validator = Validator::make($rq->input(), $rules, $message);
-        $errors = $validator->errors()->all();
-        if ($errors) {
-            $message = array(
-                'errCode' => 1,
-                'message' => $errors[0]
+        try {
+            $rules = array(
+                'email' => 'required|email',
+                'password' => 'required|min:6|max:255'
                 );
-            return response()->json($message);
-        }
 
-        // 验证用户登录 同时记录用户
-        if (Auth::attempt($rq->input())) {
             $message = array(
-                'errCode' => 0,
-                'message' => "登录成功"
+                'email.required' => '请输入邮箱地址',
+                'email.email' => '请输入正确的邮箱地址格式'
                 );
-            return response()->json($message);
-            // return Auth::user();
 
-        } else {
-
-            $message = array();
-            
-            if (count($user->where('email', $rq->input('email'))->get())) {
-                $message['errCode'] = 1;
-                $message['message'] = '密码错误';
-            } else {
-                $message['errCode'] = 2;
-                $message['message'] = '找不到该用户';
+            $validator = Validator::make($rq->input(), $rules, $message);
+            $errors = $validator->errors()->all();
+            if ($errors) {
+                $message = array(
+                    'errCode' => 1,
+                    'message' => $errors[0]
+                    );
+                return response()->json($message);
             }
-            
-            return response()->json($message);
+
+            // 验证用户登录 同时记录用户
+            if (Auth::attempt($rq->input())) {
+                $message = array(
+                    'errCode' => 0,
+                    'message' => "登录成功"
+                    );
+                return response()->json($message);
+                // return Auth::user();
+
+            } else {
+
+                $message = array();
+                
+                if (count($user->where('email', $rq->input('email'))->get())) {
+                    $message['errCode'] = 1;
+                    $message['message'] = '密码错误';
+                } else {
+                    $message['errCode'] = 2;
+                    $message['message'] = '找不到该用户';
+                }
+                
+                return response()->json($message);
+            }
         }
+
+        catch (Exception $e) {
+
+        }
+
+        
 
 
     }
@@ -147,6 +155,10 @@ class UserController extends Controller
             $user->password = Hash::make($rq->input('password'));
             $user->save();
 
+            Auth::login($user);
+
+            // return Auth::user();
+
             // 返回成功信息
             $data = array(
                 'errCode' => '0',
@@ -158,7 +170,13 @@ class UserController extends Controller
 
         }
 
-        
+    }
+
+    /**
+     * 用户退出登录
+     */
+    public function getLogout() {
+        Auth::logout();
     }
 
     /**
