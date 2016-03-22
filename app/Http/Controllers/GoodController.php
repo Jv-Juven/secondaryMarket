@@ -10,4 +10,11 @@ use App\Http\Controllers\Controller;
 class GoodController extends Controller
 {
     //
+
+	/**
+	 * 上传商品数据
+	 */
+    public function postGood(Request $rq) {
+    	
+    }
 }
