@@ -23,6 +23,8 @@ Route::post('/postRegister', 'UserController@postRegister');
 
 Route::post('/postChangePsd', 'UserController@postChangePsd');
 
+Route::post('/postGood', 'GoodController@postGood');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

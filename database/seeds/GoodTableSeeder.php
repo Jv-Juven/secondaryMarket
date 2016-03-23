@@ -24,8 +24,9 @@ class GoodTableSeeder extends Seeder
         		'good_image' => str_random(8).'.jpg',
         		'contacts' => '广州大学城外环西路'.rand(100,300).'号',
         		'status' => rand(0,3),
-        		'storage' => rand(0,100),
+        		'good_storage' => rand(0,100),
         		'type' => rand(0,1),
+        		'remark' => '备注信息：'.str_random(6),
         		'start_time' => time(),
         		'end_time' => time() + (7 * 24 * 60 * 60)
     		]);
