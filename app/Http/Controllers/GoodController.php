@@ -16,6 +16,13 @@ class GoodController extends Controller
     //
     public function __construct() {}
 
+    /**
+     * 返回发布视图
+     */
+    public function issue() {
+    	return view("pages.issue");
+    }
+
 	/**
 	 * 上传商品数据
 	 */

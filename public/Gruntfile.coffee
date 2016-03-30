@@ -102,8 +102,11 @@ module.exports = (grunt)->
 					compress: false
 					},
 				files: {
-					"dist/css/common.css": ["src/common/layout.styl"]
+					"dist/css/common.css": ["src/common/layout.styl", "src/common/common.styl"]
 					"dist/css/login.css": ["src/pages/login.styl"]
+					"dist/css/home.css": ["src/pages/home.styl"]
+					"dist/css/search.css": ["src/pages/search.styl"]
+					"dist/css/issue.css": ["src/pages/issue.styl"]
 				}
 			}
 		}
@@ -146,7 +149,7 @@ module.exports = (grunt)->
 		watch:
 			compile:
 				options:
-					livereload: 1337    #true
+					livereload: true    #true
 				files: ['src/**/*.styl', 'src/**/*.coffee']
 				tasks: ['stylus', 'browserify']
 

@@ -8,6 +8,7 @@
 
 	@section("css")
 	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="dist/css/common.css">
 	@show
 
 </head>
