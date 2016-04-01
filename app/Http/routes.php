@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/search', 'HomeController@search');
 Route::get('/login', 'UserController@login');
 Route::get('/issue', 'GoodController@issue');
+Route::get('/intro', 'OffserController@introPage');
 
 Route::post('/postLogin', 'UserController@postLogin');
 
