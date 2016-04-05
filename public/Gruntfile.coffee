@@ -67,10 +67,12 @@ module.exports = (grunt)->
                 flatten: true
                 files: {
                     'dist/js/common.js': ['src/common/layout.coffee','src/common/config.coffee'],
+                    'dist/js/components.js': ['src/components/*.coffee'],
                 }
             dist: {
                 files: {
                   "dist/js/layout.js": ["src/common/layout.coffee"]
+                  'dist/js/components.js': ['src/components/*.coffee']
                   "dist/js/login.js": ["src/pages/login.coffee"]
                   "dist/js/home.js": ["src/pages/home.coffee"]
                 },
@@ -104,6 +106,7 @@ module.exports = (grunt)->
 					},
 				files: {
 					"dist/css/common.css": ["src/common/layout.styl", "src/common/common.styl"]
+					"dist/css/components.css": ["src/components/*.styl"]
 					"dist/css/login.css": ["src/pages/login.styl"]
 					"dist/css/home.css": ["src/pages/home.styl"]
 					"dist/css/search.css": ["src/pages/search.styl"]

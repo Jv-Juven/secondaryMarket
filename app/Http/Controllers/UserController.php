@@ -8,6 +8,7 @@ use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\User;
+use App\Good;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -189,4 +190,16 @@ class UserController extends Controller
             ])->save();
 
     }
+
+    /**
+     * 获取用户帖子
+     */
+    public function invitation() {
+        $goods = new Good;
+        $goods_list = $goods->where('user_id', 3)->get();
+        // echo $goods_list;
+        // exit();
+        return view('pages.invitation', ['goods_list' => $goods_list] );
+    }
+
 }

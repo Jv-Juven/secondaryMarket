@@ -21,6 +21,7 @@ Route::get('/search', 'HomeController@search');
 Route::get('/login', 'UserController@login');
 Route::get('/issue', 'GoodController@issue');
 Route::get('/intro', 'OffserController@introPage');
+Route::get('/invitation', 'UserController@invitation');
 
 Route::post('/postLogin', 'UserController@postLogin');
 

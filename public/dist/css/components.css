@@ -1,0 +1,42 @@
+.additon-sel-hide {
+  display: none;
+}
+.additon-sel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 9;
+}
+.addition-sel-bg {
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+}
+.addition-sel-pannel {
+  right: 0;
+  background: #fff;
+  width: 90%;
+}
+.addition-sel-title {
+  line-height: 3.6rem;
+}
+
+.goods-thumb-img {
+  width: 5rem;
+  height: 5rem;
+}
+.goods-item {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.search-arrow {
+  font-size: 20px;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+.search-row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

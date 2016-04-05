@@ -25,6 +25,9 @@ class CreateGoodsTable extends Migration
             $table->tinyInteger('status')->default(0); // 状态（0正常、1售罄、2违规、3下架等）
             $table->integer('good_storage'); // 库存
             $table->tinyInteger('type')->default(0); // 类型（现金、积分）
+            $table->string('name', 50); // 联系人姓名
+            $table->string('QQ', 12)->nullable(); // 联系人QQ
+            $table->string('school', 100)->nullable(); // 联系人学校
             $table->string('remark', 140)->nullable(); // 商品信息
             $table->bigInteger('start_time')->nullable(); // 商品开始时间
             $table->bigInteger('end_time')->nullable(); // 商品开始时间
