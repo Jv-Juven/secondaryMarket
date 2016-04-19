@@ -49,6 +49,13 @@ class UserController extends Controller
     }
 
     /**
+     * 获取注册页面
+     */
+    public function register() {
+        return view("pages.register");
+    }
+
+    /**
      * 处理登录页面提交的数据
      * 登录
      */

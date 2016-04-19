@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/search', 'HomeController@search');
 Route::get('/login', 'UserController@login');
+Route::get('/register', 'UserController@register');
 Route::get('/issue', 'GoodController@issue');
 Route::get('/intro', 'OffserController@introPage');
 Route::get('/invitation', 'UserController@invitation');

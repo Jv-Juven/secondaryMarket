@@ -2,6 +2,7 @@
 
 form = new Vue {
 	el: "#login"
+	
 	methods: 
 		submit: ()->
 			$.post "/postLogin", {

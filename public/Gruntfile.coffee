@@ -73,6 +73,7 @@ module.exports = (grunt)->
                 files: {
                   "dist/js/layout.js": ["src/common/layout.coffee"]
                   'dist/js/components.js': ['src/components/*.coffee']
+                  "dist/js/register.js": ["src/pages/register.coffee"]
                   "dist/js/login.js": ["src/pages/login.coffee"]
                   "dist/js/home.js": ["src/pages/home.coffee"]
                 },

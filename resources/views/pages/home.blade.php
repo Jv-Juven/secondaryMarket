@@ -38,7 +38,7 @@
 		</a>
 	</div>
 </div>
-<div class="container">
+<div class="container home-container">
 	<div class="row">
 		<form class="navbar-form navbar-left row" role="search">
 			<div class="form-group col-xs-8">
@@ -52,7 +52,7 @@
 	<div class="row home-row">
 		<div class="col-xs-4 home-item">
 			<div class="item-wrapper">
-				<a href="#">
+				<a href="/issue">
 					<span class="item-img-wrapper">
 						<img class="item-img" src="./images/home/item01.gif" alt="">
 					</span>

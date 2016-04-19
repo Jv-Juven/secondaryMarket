@@ -26,6 +26,9 @@
   letter-spacing: 0px;
   display: block;
 }
+.home-container {
+  overflow: hidden;
+}
 .home-row {
   margin-top: 20px;
   margin-bottom: 60px;
