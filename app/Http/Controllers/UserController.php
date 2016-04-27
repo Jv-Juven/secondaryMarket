@@ -65,13 +65,16 @@ class UserController extends Controller
 
         try {
             $rules = array(
-                'email' => 'required|email',
+                'name' => 'required|min:1|max:20',
                 'password' => 'required|min:6|max:255'
                 );
 
             $message = array(
-                'email.required' => '请输入邮箱地址',
-                'email.email' => '请输入正确的邮箱地址格式'
+                'name.required' => '请输入账号',
+                'name.max' => '请输入1到20位的账号',
+                'password.required' => '请输入6-20位的密码',
+                'password.min' => '请输入6-20位的密码',
+                'password.max' => '请输入6-20位的密码'
                 );
 
             $validator = Validator::make($rq->input(), $rules, $message);
@@ -97,7 +100,7 @@ class UserController extends Controller
 
                 $message = array();
                 
-                if (count($user->where('email', $rq->input('email'))->get())) {
+                if (count($user->where('name', $rq->input('name'))->get())) {
                     $message['errCode'] = 1;
                     $message['message'] = '密码错误';
                 } else {
@@ -113,8 +116,6 @@ class UserController extends Controller
 
         }
 
-        
-
 
     }
 
@@ -126,16 +127,20 @@ class UserController extends Controller
 
         // 验证规则
         $rules = array(
-            'name' => 'required|max:255',
-            'password' => 'required|min:6|max:255',
+            'name' => 'required|min:1|max:255',
             'email' => 'required|email|unique:users',
-            'phone' => 'sometimes|numeric'
+            'password' => 'required|min:6|max:255',
+            're_password' => 'required|min:6|max:255'
+            // 'phone' => 'sometimes|numeric'
             );
         
         // 验证信息设置
         $message = array(
             'name.required' => '请输入用户名',
+            'name.min' => '请输入1到20位的用户名',
+            'name.max' => '请输入1到20位的用户名',
             'password.required' => '请输入密码',
+            're_password.required' => '请再次输入密码',
             'email.email' => '请输入正确的邮箱地址格式',
             'email.required' => '请输入邮箱地址',
             'email.unique' => '该邮箱已被使用',
