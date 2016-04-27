@@ -8,7 +8,7 @@
 @section("body")
 <div class="container">
 	<div class="row">
-		<div class="btn-group btn-group-justified issue-choose-btns" role="group" aria-label="...">
+		<!-- <div class="btn-group btn-group-justified issue-choose-btns" role="group" aria-label="...">
 			<div class="btn-group" role="group">
 				<button type="button" class="btn btn-default">转让</button>
 			</div>
@@ -21,6 +21,20 @@
 			<div class="btn-group" role="group">
 				<button type="button" class="btn btn-default">淘宝</button>
 			</div>
+		</div> -->
+		<div class="btn-group btn-group-justified issue-choose-btns" data-toggle="buttons">
+			<label class="btn btn-success"> <!-- active -->
+				<input type="radio" name="options" id="option1" autocomplete="off" checked>转让
+			</label>
+			<label class="btn btn-success">
+				<input type="radio" name="options" id="option2" autocomplete="off">求购
+			</label>
+			<label class="btn btn-success">
+				<input type="radio" name="options" id="option3" autocomplete="off">转手
+			</label>
+			<label class="btn btn-success">
+				<input type="radio" name="options" id="option4" autocomplete="off">淘宝
+			</label>
 		</div>
 	</div>
 	<!-- 商品图片 -->
@@ -59,13 +73,21 @@
 			<input class="form-control" type="text" placeholder="请输入商品的标题">
 		</div>
 	</div>
-	<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	<!-- <div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
 			<button type="button" class="btn btn-default">现金商品</button>
 		</div>
 		<div class="btn-group" role="group">
 			<button type="button" class="btn btn-success">积分商品</button>
 		</div>
+	</div> -->
+	<div class="btn-group btn-group-justified" data-toggle="buttons">
+		<label class="btn btn-info"> <!-- active -->
+			<input type="radio" name="options" id="" autocomplete="off" checked>现金商品
+		</label>
+		<label class="btn btn-info">
+			<input type="radio" name="options" id="" autocomplete="off">积分商品
+		</label>
 	</div>
 	<div class="row row-margin">
 		<div class="col-xs-3">

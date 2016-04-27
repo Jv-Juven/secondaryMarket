@@ -127,7 +127,7 @@ class UserController extends Controller
 
         // 验证规则
         $rules = array(
-            'name' => 'required|min:1|max:255',
+            'name' => 'required|min:1|max:255|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:255',
             're_password' => 'required|min:6|max:255'
@@ -139,6 +139,7 @@ class UserController extends Controller
             'name.required' => '请输入用户名',
             'name.min' => '请输入1到20位的用户名',
             'name.max' => '请输入1到20位的用户名',
+            'name.unique' => '该账号已被使用',
             'password.required' => '请输入密码',
             're_password.required' => '请再次输入密码',
             'email.email' => '请输入正确的邮箱地址格式',
@@ -168,9 +169,9 @@ class UserController extends Controller
             $user->password = Hash::make($rq->input('password'));
             $user->save();
 
-            Auth::login($user);
+            // Auth::login($user);
 
-            // return Auth::user();
+            return Auth::user();
 
             // 返回成功信息
             $data = array(
