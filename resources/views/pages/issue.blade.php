@@ -26,7 +26,7 @@
 			<label class="btn btn-success"> <!-- active -->
 				<input type="radio" name="options" id="option1" autocomplete="off" checked>转让
 			</label>
-			<label class="btn btn-success">
+			<label class="btn btn-success active">
 				<input type="radio" name="options" id="option2" autocomplete="off">求购
 			</label>
 			<label class="btn btn-success">
@@ -82,7 +82,7 @@
 		</div>
 	</div> -->
 	<div class="btn-group btn-group-justified" data-toggle="buttons">
-		<label class="btn btn-info"> <!-- active -->
+		<label class="btn btn-info active"> <!-- active -->
 			<input type="radio" name="options" id="" autocomplete="off" checked>现金商品
 		</label>
 		<label class="btn btn-info">
