@@ -13,14 +13,14 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->unique();
-            $table->integer('phone')->nullable();
-            $table->integer('virtual_money')->default(0);
-            $table->string('email')->unique();
-            $table->string('password', 60);
-            $table->rememberToken();
-            $table->timestamps();
+            $table->increments('id'); // 自增数据表id
+            $table->string('name')->unique(); // 唯一的用户名（账号）
+            $table->integer('phone')->nullable(); // 用户手机号码
+            $table->integer('virtual_money')->default(0); // 用户虚拟币
+            $table->string('email')->unique(); // 唯一的用户邮箱
+            $table->string('password', 60); // 用户密码
+            $table->rememberToken(); // "记住我"秘钥（暂时不用，备用）
+            $table->timestamps(); // 用户账号的创建时间和登录时间记录
         });
     }
 
