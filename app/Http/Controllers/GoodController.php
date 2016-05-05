@@ -89,10 +89,10 @@ class GoodController extends Controller
 		$validator = Validator::make($data, $rules, $message);
 		$errors = $validator->errors()->all();
 		if ($errors) {
-			$msg = array([
+			$msg = array(
 				'errCode' => 1,
 				'message' => $errors[0]
-			]);
+			);
 			return response()->json($msg);
 		}
 
@@ -120,10 +120,10 @@ class GoodController extends Controller
 
 			$good->save();
 
-			$msg = array([
+			$msg = array(
 				'errCode' => 0,
 				'message' => '商品上传成功'
-			]);
+			);
 			return response()->json($msg);
 
 		} catch (Exception $e) {
@@ -131,5 +131,9 @@ class GoodController extends Controller
 		}
 
 
+    }
+
+    public function getUpToken () {
+    	
     }
 }

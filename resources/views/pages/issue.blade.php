@@ -70,7 +70,7 @@
 			<label class="input-title">标题：</label>
 		</div>
 		<div class="col-xs-9">
-			<input class="form-control" type="text" placeholder="请输入商品的标题" v-model="good_title">
+			<input class="form-control" type="text" placeholder="请输入商品的标题" v-model="good_title" @focus="clear">
 		</div>
 	</div>
 	<!-- <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -167,6 +167,13 @@
 			<textarea class="form-control" rows="5" placeholder="请输入交易地点" v-model="address"></textarea>
 		</div>
 	</div>
+	<div class="row row-margin">
+		<div id="issue_alert" v-show="tips != ''">
+			<div class="alert alert-danger col-xs-10 col-xs-offset-1 text-center">
+				@{{tips}}
+			</div>
+		</div>
+	</div>
 	<div class="row row-margin" style="padding-bottom:12rem;">
 		<div class="col-xs-12 text-center">
 			<button class="btn btn-success" @click="submit">提交信息</button>
@@ -177,5 +184,7 @@
 
 @section("js")
 @parent
+<script src="lib/qiniu/plupload.full.min.js"></script>
+<script src="lib/qiniu/qiniu.js"></script>
 <script src="dist/js/issue.js"></script>
 @stop

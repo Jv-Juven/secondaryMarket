@@ -1,5 +1,5 @@
 issue = {
-	pics: ["jfsadjfaf", "fasdfsa"]
+	pics: []
 	good_title: ""  # 商品标题
 	type: 0 # 商品类型
 	price: 0.00 # 商品价格
@@ -11,6 +11,7 @@ issue = {
 	QQ: "" # 发布人QQ
 	school: "" # 发布人学校
 	address: "" # 交易地址
+	tips: "" # 警告信息
 }
 
 issue_body = new Vue {
@@ -18,12 +19,17 @@ issue_body = new Vue {
 	data: issue
 	methods: {
 		submit: ()->
+			v_this = this
 			$.post "/postGood", issue, (msg)->
-				# if msg.errCode is 0
-					# alert msg.message
-				# else 
-					# alert msg.message
-			# 'json'	
+				if msg.errCode is 0
+					v_this.tips = msg.message
+				else 
+					v_this.tips = msg.message
+				
+
+		clear: ()->
+			this.tips = ""
 	}
 	ready: ()->
 }
+

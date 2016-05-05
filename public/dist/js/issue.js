@@ -2,7 +2,7 @@
 var issue, issue_body;
 
 issue = {
-  pics: ["jfsadjfaf", "fasdfsa"],
+  pics: [],
   good_title: "",
   type: 0,
   price: 0.00,
@@ -13,7 +13,8 @@ issue = {
   long_num: "",
   QQ: "",
   school: "",
-  address: ""
+  address: "",
+  tips: ""
 };
 
 issue_body = new Vue({
@@ -21,7 +22,18 @@ issue_body = new Vue({
   data: issue,
   methods: {
     submit: function() {
-      return $.post("/postGood", issue, function(msg) {});
+      var v_this;
+      v_this = this;
+      return $.post("/postGood", issue, function(msg) {
+        if (msg.errCode === 0) {
+          return v_this.tips = msg.message;
+        } else {
+          return v_this.tips = msg.message;
+        }
+      });
+    },
+    clear: function() {
+      return this.tips = "";
     }
   },
   ready: function() {}
