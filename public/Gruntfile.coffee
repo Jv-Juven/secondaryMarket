@@ -76,6 +76,7 @@ module.exports = (grunt)->
                   "dist/js/register.js": ["src/pages/register.coffee"]
                   "dist/js/login.js": ["src/pages/login.coffee"]
                   "dist/js/home.js": ["src/pages/home.coffee"]
+                  "dist/js/issue.js": ["src/pages/issue.coffee"]
                 },
                 options: {
                   transform: ['coffeeify']

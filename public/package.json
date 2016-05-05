@@ -1,21 +1,17 @@
 {
-  "name": "www.yiyuan",
+  "name": "www.usedmk.com",
   "version": "0.1.0",
-  "description": "羽园手机端网站",
+  "description": "二手市场手机端网站",
   "keywords": [
-    "yiyuan",
-    "yi",
-    "yuan",
-    "yuyuan",
-    "羽园",
-    "羽园手机端",
-    "羽园手机端网站"
+    "二手市场",
+    "二手",
+    "市场",
+    "usedmk"
   ],
   "devDependencies": {
-    "connect-livereload": "^0.5.4",
-    "grunt": "~0.4.5",
     "coffeeify": "latest",
-    "stringify": "latest",
+    "connect-livereload": "^0.5.4",
+    "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-coffee": "^0.13.0",
@@ -26,6 +22,13 @@
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-stylus": "^1.0.0",
     "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-watch": "^0.6.1"
-  }
+    "grunt-contrib-watch": "^0.6.1",
+    "stringify": "latest"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juven",
+  "license": "ISC"
 }

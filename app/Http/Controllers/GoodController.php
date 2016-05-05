@@ -28,18 +28,24 @@ class GoodController extends Controller
 	 */
     public function postGood(Request $rq) {
     	// return $rq->all();
-    	$good_name = $rq->input('good_name');
-    	$good_info = $rq->input('good_info');
+    	// return gettype( serialize( $rq->input('pics') ) );
+    	// return serialize( $rq->input('pics') );
+    	$good_name = $rq->input('good_title');
+    	$good_info = $rq->input('describe');
     	$type = intval($rq->input('type'));
     	if ($type == 0) {
-	    	$good_price = $rq->input('good_price');
+	    	$good_price = $rq->input('price');
     	} else {
-    		$good_itegral = $rq->input('good_itegral');
+    		$good_itegral = $rq->input('price');
     	}
-    	$good_image = $rq->input('good_image');
-    	$contacts = $rq->input('contacts');
+    	$good_image = serialize( $rq->input('pics') );
+    	$contacts = $rq->input('address');
     	$remark = $rq->input('remark');
-    	$good_storage = $rq->input('good_storage');
+    	$good_storage = $rq->input('storage');
+
+    	$name = $rq->input('name');
+    	$qq = $rq->input('QQ');
+    	$school = $rq->input('school');
 
     	$data = array(
     		'good_name' => $good_name,
@@ -108,6 +114,10 @@ class GoodController extends Controller
 			$good->type = $type;
 			$good->remark = $remark;
 
+			$good->name = $name;
+			$good->QQ = $qq;
+			$good->school = $school;
+
 			$good->save();
 
 			$msg = array([
@@ -116,7 +126,9 @@ class GoodController extends Controller
 			]);
 			return response()->json($msg);
 
-		} catch (Exception $e) {}
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
 
 
     }
