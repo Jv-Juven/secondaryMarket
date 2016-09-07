@@ -1,3 +1,18 @@
+# 二手交易市场（练习）
+----
+## 技术
+前端使用Vuejs，后端使用Laravel 5.2 框架
+
+## 搭建部署
+在指定的目录里使用`git clone`命令（需要预先安装git）：
+> ```
+> git clone git@github.com:Jv-Juven/secondaryMarket.git
+>
+> cd secondaryMarket && composer install
+> ```
+
+前提条件，必须要安装好`composer`，搭配好PHP服务器环境，这里可以参考文档：[Laravel学院](http://laravelacademy.org/laravel-docs-5_2)
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
